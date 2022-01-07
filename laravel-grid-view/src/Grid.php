@@ -6,8 +6,11 @@ use Closure;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Itstructure\GridView\Columns\{BaseColumn, CallbackColumn, DefaultColumn};
-use Itstructure\GridView\DataProviders\{BaseDataProvider, EloquentDataProvider};
+use Itstructure\GridView\Columns\BaseColumn;
+use Itstructure\GridView\Columns\CallbackColumn;
+use Itstructure\GridView\Columns\DefaultColumn;
+use Itstructure\GridView\DataProviders\BaseDataProvider;
+use Itstructure\GridView\DataProviders\EloquentDataProvider;
 use Itstructure\GridView\Traits\Configurable;
 
 /**
@@ -151,7 +154,7 @@ class Grid
         $this->request = request();
 
         if (!($this->dataProvider instanceof BaseDataProvider)) {
-            throw new Exception('dataProvider must be instance of '.BaseDataProvider::class);
+            throw new Exception('dataProvider must be instance of ' . BaseDataProvider::class);
         }
     }
 

@@ -3,8 +3,10 @@
 namespace Itstructure\GridView\Columns;
 
 use Closure;
-use Itstructure\GridView\Filters\StubFilter;
-use Itstructure\GridView\Actions\{BaseAction, View, Edit, Delete};
+use Itstructure\GridView\Actions\BaseAction;
+use Itstructure\GridView\Actions\Delete;
+use Itstructure\GridView\Actions\Edit;
+use Itstructure\GridView\Actions\View;use Itstructure\GridView\Filters\StubFilter;
 use Itstructure\GridView\Traits\Configurable;
 
 /**
@@ -16,15 +18,15 @@ class ActionColumn extends BaseColumn
     use Configurable;
 
     const
-        ACTION_VIEW = 'view',
-        ACTION_EDIT = 'edit',
-        ACTION_DELETE = 'delete',
+    ACTION_VIEW = 'view',
+    ACTION_EDIT = 'edit',
+    ACTION_DELETE = 'delete',
 
-        ACTION_DEFINITIONS = [
-            self::ACTION_VIEW => View::class,
-            self::ACTION_EDIT => Edit::class,
-            self::ACTION_DELETE => Delete::class,
-        ];
+    ACTION_DEFINITIONS = [
+        self::ACTION_VIEW => View::class,
+        self::ACTION_EDIT => Edit::class,
+        self::ACTION_DELETE => Delete::class,
+    ];
 
     /**
      * @var array
@@ -76,6 +78,7 @@ class ActionColumn extends BaseColumn
                     $this->fillActionObjects(new $type['class']($type));
                 }
             }
+
         }
     }
 
